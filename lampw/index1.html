@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lamp Store</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h1, h2, h3 {
+      color: #333;
+    }
+    
+    /* Header */
+    header {
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    
+    /* Navigation */
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      padding: 5px;
+    }
+    
+    nav ul li a:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    
+
+    .lamp-card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      display: inline-block;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    
+    .lamp-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    
+    .lamp-card h3 {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    
+    .lamp-card p {
+      color: #777;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    
+
+    .lamp-card:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Lamp Store</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+    </ul>
+  </nav>
+  
+  <h2>Check All Collections</h2>
+  
+  <div id="lamp-collection">
+    <!-- Lamp cards will be dynamically added here -->
+    <img src="lamp1.jpg" class="lamp">
+    <img src="modern%20floor%20lamp.jpg" class="lamp">
+  </div>
+
+  <script>
+    // Sample data of lamps for sale
+    var lamps = [
+      {
+        name: "Vintage Table Lamp",
+        image: "lamp1.jpg",
+        price: "22,990kzt",
+        description: "A stylish vintage table lamp with a bronze finish."
+      },
+      {
+        name: "Modern Floor Lamp",
+        image: "lamp1.jpg",
+        price: "50,990kzt",
+        description: "A sleek and minimalist floor lamp for contemporary spaces."
+      },
+      {
+        name: "Industrial Desk Lamp",
+        image: "lamp3.jpg",
+        price: "",
+        description: "An industrial-style desk lamp with adjustable arms."
+      }
+      // Add more lamp objects here...
+    ];
+
+    // Function to generate lamp cards
+    function generateLampCards() {
+      var lampCollection = document.getElementById("lamp-collection");
+      
+      // Clear existing lamp cards
+      lampCollection.innerHTML = "";
+      
+      // Generate lamp cards from the lamps array
+      lamps.forEach(function(lamp) {
+        var lampCard = document.createElement("div");
+        lampCard.classList.add("lamp-card");
+        
+        var image = document.createElement("img");
+        image.src = lamp.image;
+        lampCard.appendChild(image);
+        
+        var name = document.createElement("h3");
+        name.textContent = lamp.name;
+        lampCard.appendChild(name);
+        
+        var price = document.createElement("p");
+        price.textContent = "Price: " + lamp.price;
+        lampCard.appendChild(price);
+        
+        var description = document.createElement("p");
+        description.textContent = lamp.description;
+        lampCard.appendChild(description);
+        
+        lampCollection.appendChild(lampCard);
+      });
+    }
+
+    // Call the function to generate lamp cards
+    generateLampCards();
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/7c02af2a6a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="path/to/bootstrap.min.css">
+</head>
+<body>
+    <div class="hero"> 
+        <nav>
+            <img src="menu.jpg" class="menu-img">
+            <img src="logo.jpg" class="logo">
+            <ul>
+                <li><a href="contacts.html">Contact</a> </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="index1.html">Products</a></li>
+            </ul>
+            <button type="button" onclick="toggleBtn()" id="btn" ><span></span></button>
+        </nav>
+
+        <div class="lamp-container">
+            <img src="lamp.png" class="lamp">
+            <img src="light.jpg" class="light" id="light">
+        </div>
+
+        <div class="text-container">
+            <h1>Latest <br> in Lighting</h1>
+            <p><br>This is the first lamp from our company. We are creating a huge collection of modern
+                Lamps of all categories - from home to office use</p>
+                <a href="index1.html">Check All Collections</a>
+                <div class="control">
+                    <p>04</p>
+                    <div class="line"><span></span></div>
+                    <p>05</p>
+                </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="about%20us.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Us</h1>
+                    <p><br><br>Danial Askarov & Nurbol Meirambay<br><br></p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab(event, 'skills')">Danial</p>
+                        <p class="tab-links" onclick="opentab(event, 'experience')">Nurbol</p>
+                        <p class="tab-links" onclick="opentab(event, 'education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Age</span><br>18</li>
+                            <li><span><br>Hometown</span><br>Taraz</li>
+                            <li><span><br>Last Name</span><br>Askarov</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Age</span><br>25</li>
+                            <li><span><br>Hometown</span><br>Almaty</li>
+                            <li><span><br>Last Name</span><br>Meirambay</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2011 - 2013</span><br>Gymnasium № 67 named after Ilyas Yesenberlin</li>
+                            <li><span><br>2013 - 2014</span><br>School № 51</li>
+                            <li><span><br>2014 - 2022</span><br>Lyceum School № 8</li>
+                            <li><span><br>2022 - Current</span><br>Astana IT University</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">Our Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fas fa-lamp"></i>
+                    <h2>New Lamps</h2>
+                    <p><br>Brighten your spaces with our new light bulbs. 
+                        Discover energy-efficient options, modern designs,
+                         and superior illumination. Shop now and light up your world.</p>
+                         <a href="#"><br>Learn more</a>
+                </div>
+                <div>
+                    <i class="fad fa-lamp-desk"></i>
+                    <h2>Luminaire</h2>
+                    <p><br>Illuminate your spaces with our stunning collection of new luminaires.
+                         Explore modern designs, exceptional craftsmanship,
+                          and superior lighting solutions.
+                           Enhance the ambiance of any room with our high-quality luminaires.
+                            Shop now and transform your space with style and sophistication.</p>
+                         <a href="#"><br>Learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-lamp-street"></i>
+                    <h2>Chandelier</h2>
+                    <p><br>Elevate your space with our exquisite collection of new chandeliers. 
+                        Experience the allure of luxury and sophistication as these dazzling fixtures 
+                        become the centerpiece of any room. From contemporary designs to timeless classics,
+                         our chandeliers offer a perfect blend of style and grandeur. Shop now and add a touch
+                          of elegance to your space with our stunning chandeliers.</p>
+                         <a href="#"><br>Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="path/to/jquery.min.js"></script>
+    <script src="path/to/bootstrap.min.js"></script>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var light = document.getElementById("light");
+
+        function toggleBtn(){
+            btn.classList.toggle("active");
+            light.classList.toggle("on");
+        }
+    </script>
+
+    <script>
+        function opentab(event, tabname){
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            for(var i = 0; i < tablinks.length; i++){
+                tablinks[i].classList.remove("active-link");
+            }
+            for(var i = 0; i < tabcontents.length; i++){
+                tabcontents[i].classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
